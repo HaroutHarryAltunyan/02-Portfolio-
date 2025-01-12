@@ -1,0 +1,196 @@
+/* Root Variables */
+:root {
+  --primary-color: #006b8b;
+  --secondary-color: #04417e;
+  --font-color: #fff;
+  --background-color: #f4f4f4;
+  --accent-color: #e0dccc;
+  --pop: #0c4de7;
+}
+
+:root[data-theme="dark"] {
+  --primary-color: #e0dccc;
+  --secondary-color: #282c34;
+  --font-color: #ffffff;
+  --background-color: #1e1e1e;
+  --accent-color: #ff6600;
+}
+
+/* Global Box-Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif, "Segoe UI", Roboto;
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Header and Navigation */
+header {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: var(--font-color);
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Sections */
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+section#about img {
+  border-radius: 50%;
+  max-width: 150px;
+  height: auto;
+  margin: 1rem 0;
+}
+
+/* Work Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project {
+  text-align: center;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--font-color);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  will-change: transform, background-color;
+}
+
+.project:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.project-label h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+.project-label p {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+/* Resume Section */
+section#resume a {
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+section#resume a:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+/* Contact Section */
+section#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+section#contact ul li {
+  margin: 0.75rem 0;
+}
+
+section#contact ul li a {
+  font-weight: bold;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+section#contact ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  header, footer {
+    padding: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  header {
+    padding: 20px;
+  }
+
+  .projects-grid-wrapper {
+    width: 100%;
+    padding: 10px;
+  }
+
+  footer ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  footer ul li {
+    padding: 10px;
+    text-align: center;
+  }
+}
